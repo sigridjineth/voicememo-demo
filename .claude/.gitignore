@@ -1,0 +1,7 @@
+# Ignore local settings
+settings.local.json
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+reviews/
