@@ -20,5 +20,11 @@ requirements:
 	uv export -o requirements.txt --without-hashes --without dev
 	uv export -o requirements-dev.txt --without-hashes
 
-#run:
-#	uv run uvicorn griffths.main:app --reload --host 0.0.0.0 --port 8081
+test:
+	uv run pytest -v
+
+run:
+	uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+migrate:
+	uv run alembic upgrade head

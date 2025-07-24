@@ -1,15 +1,50 @@
 [project]
 name = "voicememo-demo"
 version = "0.1.0"
-description = "Add your description here"
+description = "Voice memo application with RAG capabilities using Vertex AI"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    # Existing dependencies
     "dependency-injector>=4.48.1",
     "fastapi>=0.116.1",
     "orjson>=3.11.0",
     "tenacity>=9.1.2",
     "uvicorn>=0.35.0",
+    
+    # Google Cloud
+    "google-cloud-aiplatform>=1.70.0",
+    "google-cloud-speech>=2.28.0",
+    "google-cloud-storage>=2.18.0",
+    "google-cloud-secret-manager>=2.21.0",
+    
+    # Database
+    "sqlalchemy>=2.0.36",
+    "asyncpg>=0.30.0",
+    "alembic>=1.14.0",
+    "redis>=5.2.0",
+    
+    # API & Auth
+    "python-multipart>=0.0.17",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "pydantic-settings>=2.6.1",
+    
+    # Utilities
+    "httpx>=0.28.0",
+    "numpy>=1.26.4",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.25.0",
+    "ruff>=0.8.6",
+    "black>=24.0.0",
+    "isort>=5.13.0",
+    "mypy>=1.14.1",
+    "flake8>=7.1.0",
+    "aiosqlite>=0.21.0",
 ]
 
 [tool]

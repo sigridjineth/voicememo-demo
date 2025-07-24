@@ -2,6 +2,8 @@
 
 echo "🔧 Running project-specific format and check..."
 
+cd backend
+
 # Run make format
 if make format; then
     echo "✅ Format completed"

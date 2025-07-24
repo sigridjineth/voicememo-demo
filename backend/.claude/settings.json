@@ -1,0 +1,33 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/format-and-check.sh",
+            "timeout": 30
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/review-python.sh",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'if make -n check >/dev/null 2>&1 && ! make check >/dev/null 2>&1; then echo \"❌ Cannot modify files: make check is currently failing. Fix existing issues first.\" >&2; exit 2; fi'",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
